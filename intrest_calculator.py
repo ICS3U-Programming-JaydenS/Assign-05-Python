@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+# Created By: Jayden Smith
+# Date: May 12, 2025
+# This code calculates the user interest
+
+
 def InterestCalculator(p, r, t, amt_of_t):
     if t == "years":
         interest = p * r * amt_of_t * 0.01
@@ -9,10 +15,10 @@ def InterestCalculator(p, r, t, amt_of_t):
 
 
 def main():
-    print ("Hello! Welcome to Jayden’s interest calculator")
+    print("Hello! Welcome to Jayden’s interest calculator")
     while True:
         principal = input("What is your starting amount (principal): ")
-        rate = input("What is your your rate (in decimal)? ")
+        rate = input("What is your your rate (%)? ")
         time = input("Please enter the range of time (years, months, days) ")
         if (time == "years") or (time == "months") or (time == "days"):
             amount_of_time = input("How long has it been since you made this deposit?")
@@ -22,10 +28,10 @@ def main():
                     rate_float = float(rate)
                     try:
                         amount_of_time_float = float(amount_of_time)
-                        if rate_float < 0:
-                            print(" Your rate cannot be 0!")
+                        if rate_float <= 0:
+                            print(" Your rate cannot be negative or 0!")
                         elif amount_of_time_float < 0:
-                            print("Your amount of time cannot be 0!")
+                            print("Your amount of time cannot be negative!")
                         # Ask about if principal can be negative
                         else:
                             break

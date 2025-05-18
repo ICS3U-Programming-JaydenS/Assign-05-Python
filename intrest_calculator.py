@@ -63,6 +63,8 @@ def main():
     interest = InterestCalculator(
         principal_float, rate_float, time, amount_of_time_float
     )
+
+    # Displayed how much earned and total amount
     print(
         "The amount that you have earned in",
         (amount_of_time_float),

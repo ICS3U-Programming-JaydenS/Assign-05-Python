@@ -59,7 +59,7 @@ def main():
         # If the time range isnt any of the ones listed this happens
         else:
             print("Please enter a valid time range!")
-    
+    # Call function
     interest = InterestCalculator(
         principal_float, rate_float, time, amount_of_time_float
     )

@@ -29,7 +29,7 @@ def main():
         if (time == "years") or (time == "months") or (time == "days"):
             # Get the amount of time passed
             amount_of_time = input("How long has it been since you made this deposit?")
-            
+
             # Try catch the numerical data and convert  them to floats
             try:
                 principal_float = float(principal)

@@ -56,8 +56,10 @@ def main():
                     print(rate, " is not a float!")
             except Exception:
                 print(principal, " is not a float!")
+        # If the time range isnt any of the ones listed this happens
         else:
             print("Please enter a valid time range!")
+    
     interest = InterestCalculator(
         principal_float, rate_float, time, amount_of_time_float
     )

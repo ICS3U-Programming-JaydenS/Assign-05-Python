@@ -18,25 +18,38 @@ def InterestCalculator(p, r, t, amt_of_t):
 def main():
     # Greets user
     print("Hello! Welcome to Jayden’s interest calculator")
+
+    # Ensures that if given erroneous it will loop back to get the user input
     while True:
         principal = input("What is your starting amount (principal): ")
         rate = input("What is your your rate (%)? ")
         time = input("Please enter the range of time (years, months, days) ")
+
+        # Make sure that the time range is valid
         if (time == "years") or (time == "months") or (time == "days"):
+            # Get the amount of time passed
             amount_of_time = input("How long has it been since you made this deposit?")
+            
+            # Try catch the numerical data and convert  them to floats
             try:
                 principal_float = float(principal)
                 try:
                     rate_float = float(rate)
                     try:
                         amount_of_time_float = float(amount_of_time)
+
+                        # Checks if the numbers are negative
                         if rate_float <= 0:
                             print(" Your rate cannot be negative or 0!")
                         elif amount_of_time_float < 0:
                             print("Your amount of time cannot be negative!")
                         # Ask about if principal can be negative
+
+                        # If everything is right the loop is broken
                         else:
                             break
+
+                    # All the exceptions for if the converstion goes wrong
                     except Exception:
                         print(amount_of_time, " is not a float!")
                 except Exception:

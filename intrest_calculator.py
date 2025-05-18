@@ -5,6 +5,7 @@
 
 
 def InterestCalculator(p, r, t, amt_of_t):
+    # Calculates intrest based on what the time range is
     if t == "years":
         interest = p * r * amt_of_t * 0.01
     if t == "months":
@@ -15,6 +16,7 @@ def InterestCalculator(p, r, t, amt_of_t):
 
 
 def main():
+    # Greets user
     print("Hello! Welcome to Jayden’s interest calculator")
     while True:
         principal = input("What is your starting amount (principal): ")

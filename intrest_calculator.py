@@ -5,7 +5,7 @@
 
 
 def InterestCalculator(p, r, t, amt_of_t):
-    # Calculates intrest based on what the time range is
+    # Calculates interest based on what the time range is
     if t == "years":
         interest = p * r * amt_of_t * 0.01
     if t == "months":
@@ -22,7 +22,7 @@ def main():
     # Ensures that if given erroneous it will loop back to get the user input
     while True:
         principal = input("What is your starting amount (principal): ")
-        rate = input("What is your your rate (%)? ")
+        rate = input("What is your rate (%)? ")
         time = input("Please enter the range of time (years, months, days) ")
 
         # Make sure that the time range is valid
@@ -49,7 +49,7 @@ def main():
                         else:
                             break
 
-                    # All the exceptions for if the converstion goes wrong
+                    # All the exceptions for if the converting goes wrong
                     except Exception:
                         print(amount_of_time, " is not a float!")
                 except Exception:

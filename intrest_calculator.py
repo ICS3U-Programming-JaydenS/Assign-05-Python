@@ -1,0 +1,58 @@
+def InterestCalculator(p, r, t, amt_of_t):
+    if t == "years":
+        interest = p * r * amt_of_t * 0.01
+    if t == "months":
+        interest = p * r * (amt_of_t / 12) * 0.01
+    if t == "days":
+        interest = p * r * (amt_of_t / 365) * 0.01
+    return interest
+
+
+def main():
+    print ("Hello! Welcome to Jayden’s interest calculator")
+    while True:
+        principal = input("What is your starting amount (principal): ")
+        rate = input("What is your your rate (in decimal)? ")
+        time = input("Please enter the range of time (years, months, days) ")
+        if (time == "years") or (time == "months") or (time == "days"):
+            amount_of_time = input("How long has it been since you made this deposit?")
+            try:
+                principal_float = float(principal)
+                try:
+                    rate_float = float(rate)
+                    try:
+                        amount_of_time_float = float(amount_of_time)
+                        if rate_float < 0:
+                            print(" Your rate cannot be 0!")
+                        elif amount_of_time_float < 0:
+                            print("Your amount of time cannot be 0!")
+                        # Ask about if principal can be negative
+                        else:
+                            break
+                    except Exception:
+                        print(amount_of_time, " is not a float!")
+                except Exception:
+                    print(rate, " is not a float!")
+            except Exception:
+                print(principal, " is not a float!")
+        else:
+            print("Please enter a valid time range!")
+    interest = InterestCalculator(
+        principal_float, rate_float, time, amount_of_time_float
+    )
+    print(
+        "The amount that you have earned in",
+        (amount_of_time_float),
+        (time),
+        "given your original",
+        (principal_float),
+        "deposit is",
+        (interest),
+        "$. Making your total amount",
+        (interest + principal_float),
+        "$",
+    )
+
+
+if __name__ == "__main__":
+    main()

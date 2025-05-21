@@ -17,7 +17,7 @@ def InterestCalculator(p, r, t, amt_of_t):
 
 def main():
     # Greets user
-    print("Hello! Welcome to Jayden’s interest calculator")
+    print("Hello! Welcome to Jayden's interest calculator")
 
     # Ensures that if given erroneous it will loop back to get the user input
     while True:
@@ -28,7 +28,7 @@ def main():
         # Make sure that the time range is valid
         if (time == "years") or (time == "months") or (time == "days"):
             # Get the amount of time passed
-            amount_of_time = input("How long has it been since you made this deposit?")
+            amount_of_time = input("How long has it been since you made this deposit? ")
 
             # Try catch the numerical data and convert  them to floats
             try:
@@ -41,10 +41,14 @@ def main():
                         # Checks if the numbers are negative
                         if rate_float <= 0:
                             print(" Your rate cannot be negative or 0!")
-                        elif amount_of_time_float < 0:
-                            print("Your amount of time cannot be negative!")
+                            print("")
+                        elif amount_of_time_float <= 0:
+                            print("Your amount of time cannot be negative or 0!")
+                            print("")
                         # Ask about if principal can be negative
-
+                        elif principal_float <= 0:
+                            print("Your principal cannot be negative or 0!")
+                            print("")
                         # If everything is right the loop is broken
                         else:
                             break
@@ -52,29 +56,32 @@ def main():
                     # All the exceptions for if the converting goes wrong
                     except Exception:
                         print(amount_of_time, " is not a float!")
+                        print("")
                 except Exception:
                     print(rate, " is not a float!")
+                    print("")
             except Exception:
                 print(principal, " is not a float!")
+                print("")
         # If the time range isnt any of the ones listed this happens
         else:
             print("Please enter a valid time range!")
+            print("")
     # Call function
     interest = InterestCalculator(
         principal_float, rate_float, time, amount_of_time_float
     )
 
     # Displayed how much earned and total amount
+    print(" ")
     print(
         "The amount that you have earned in",
         (amount_of_time_float),
         (time),
         "given your original",
         (principal_float),
-        "deposit is",
-        (interest),
-        "$. Making your total amount",
-        (interest + principal_float),
+        "$ deposit is {:.2f}".format(interest),
+        "$. Making your total amount {:.2f}".format(interest + principal_float),
         "$",
     )
 
